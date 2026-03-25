@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildPC | Wycena</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="buildpc_favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo-link">
+            <img src="buildpc_logo.png" alt="BuildPC Logo" class="logo-small">
+        </a>
+        <nav class="nav">
+            <a href="index.html">Strona główna</a>
+            <a href="cennik.html">Cennik</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="wycena.html" class="active">Wycena</a>
+        </nav>
+    </header>
+
+    <div class="wycena-container">
+        <h1>Wycena zestawu komputerowego</h1>
+        <p>Wybierz jedną z opcji poniżej i uzupełnij formularz, abyśmy mogli przygotować dopasowaną wycenę Twojego zestawu.</p>
+
+        <div class="opcje-wyboru">
+            <button class="wybierz-button" id="wybierz-podstawowy"><strong>Opcja podstawowa</strong></button>
+            <button class="wybierz-button" id="wybierz-zaawansowany"><strong>Opcja zaawansowana</strong></button>
+        </div>
+
+        <!-- Formularz podstawowy -->
+        <div class="form-option" id="form-podstawowy">
+            <form id="wycena-podstawowa" class="wycena-form">
+                <h2>Formularz podstawowy</h2>
+                <label for="imie-nazwisko">Imię i nazwisko</label>
+                <input type="text" id="imie-nazwisko" name="imie-nazwisko" required>
+
+                <label for="email">Adres e-mail</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="kwota">Budżet na złożenie komputera (zł)</label>
+                <input type="number" id="kwota" name="kwota" required>
+
+                <label for="opis">Opis przeznaczenia komputera i preferencje</label>
+                <textarea id="opis" name="opis" rows="5" required></textarea>
+
+                <button type="submit" class="submit-button"><strong>Wyślij</strong></button>
+            </form>
+        </div>
+
+        <!-- Formularz zaawansowany -->
+        <div class="form-option" id="form-zaawansowany">
+            <form id="wycena-zaawansowana" class="wycena-form">
+                <h2>Formularz zaawansowany</h2>
+                <label for="imie-nazwisko-zaawansowane">Imię i nazwisko</label>
+                <input type="text" id="imie-nazwisko-zaawansowane" name="imie-nazwisko-zaawansowane" required>
+
+                <label for="email-zaawansowane">Adres e-mail</label>
+                <input type="email" id="email-zaawansowane" name="email-zaawansowane" required>
+
+                <label for="kwota-zaawansowane">Kwota zestawu (opcjonalnie)</label>
+                <input type="number" id="kwota-zaawansowane" name="kwota-zaawansowane">
+
+                <label for="procesor">Procesor</label>
+                <input type="text" id="procesor" name="procesor">
+
+                <label for="karta-graficzna">Karta graficzna</label>
+                <input type="text" id="karta-graficzna" name="karta-graficzna">
+
+                <label for="plyta-glowna">Płyta główna</label>
+                <input type="text" id="plyta-glowna" name="plyta-glowna">
+
+                <label for="ram">Pamięć RAM</label>
+                <input type="text" id="ram" name="ram">
+
+                <label for="dyski">Dyski</label>
+                <input type="text" id="dyski" name="dyski">
+
+                <label for="chlodzenie">Chłodzenie</label>
+                <input type="text" id="chlodzenie" name="chlodzenie">
+
+                <label for="zasilacz">Zasilacz</label>
+                <input type="text" id="zasilacz" name="zasilacz">
+
+                <label for="obudowa">Obudowa</label>
+                <input type="text" id="obudowa" name="obudowa">
+
+                <button type="submit" class="submit-button"><strong>Wyślij</strong></button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Ładowanie EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  // Inicjalizacja EmailJS po załadowaniu SDK
+  document.addEventListener('DOMContentLoaded', function () {
+    emailjs.init({
+      publicKey: "umOor72qRHOf8d_7O", // <-- Twój aktualny Public Key
+    });
+  });
+</script>
+
+    <script src="script.js"></script>
+</body>
+</html>
