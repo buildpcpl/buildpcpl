@@ -110,44 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
           sendEmail(this);
       });
   }
-
-  function sendEmail(form) {
-      const formData = new FormData(form);
-      const formValues = Object.fromEntries(formData.entries());
-
-      const emailContent = `
-          Imię i Nazwisko: ${formValues['imie-nazwisko'] || formValues['imie-nazwisko-zaawansowane'] || ''}
-          Email: ${formValues['email'] || formValues['email-zaawansowane'] || ''}
-          Kwota zestawu: ${formValues['kwota'] || formValues['kwota-zaawansowane'] || ''}
-          Opis: ${formValues['opis'] || ''}
-          ${formValues['procesor'] ? `Procesor: ${formValues['procesor']}` : ''}
-          ${formValues['karta-graficzna'] ? `Karta Graficzna: ${formValues['karta-graficzna']}` : ''}
-          ${formValues['plyta-glowna'] ? `Płyta Główna: ${formValues['plyta-glowna']}` : ''}
-          ${formValues['ram'] ? `Pamięć RAM: ${formValues['ram']}` : ''}
-          ${formValues['dyski'] ? `Dyski: ${formValues['dyski']}` : ''}
-          ${formValues['chlodzenie'] ? `Chłodzenie: ${formValues['chlodzenie']}` : ''}
-          ${formValues['zasilacz'] ? `Zasilacz: ${formValues['zasilacz']}` : ''}
-          ${formValues['obudowa'] ? `Obudowa: ${formValues['obudowa']}` : ''}
-      `;
-
-      emailjs.send("service_pk66unl", "template_uq9otwr", {
-          from_name: formValues['imie-nazwisko'] || formValues['imie-nazwisko-zaawansowane'] || '',
-          email: formValues['email'] || formValues['email-zaawansowane'] || '',
-          kwota: formValues['kwota'] || formValues['kwota-zaawansowane'] || '',
-          opis: formValues['opis'] || '',
-          content: emailContent.trim()
-      })
-      .then(function(response) {
-          console.log("Wiadomość wysłana", response);
-          alert("Prośba o wycenę została wysłana.");
-          form.reset();
-      })
-      .catch(function(error) {
-          console.error("Wystąpił błąd", error);
-          alert("Wystąpił błąd. Spróbuj ponownie.");
-      });
-  }
-});
+//tutaj to dać z powrotem
 
 
 const observer = new IntersectionObserver((entries, observer) => {
