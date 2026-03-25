@@ -160,6 +160,7 @@ const observer = new IntersectionObserver((entries, observer) => {
   threshold: 0.1
 });
 
+
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.animate-on-scroll').forEach(el => {
     observer.observe(el);
